@@ -11,7 +11,7 @@ const prisma = new PrismaClient();
 const app = express();
 app.use(
   cors({
-    origin: "https://notes-task-frontend.vercel.app", 
+    origin: true, 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
