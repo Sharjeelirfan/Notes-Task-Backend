@@ -9,7 +9,13 @@ import { PrismaClient } from "@prisma/client";
 dotenv.config();
 const prisma = new PrismaClient();
 const app = express();
-app.use(cors({}));
+app.use(
+  cors({
+    origin: "https://notes-task-frontend.vercel.app", 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 const JWT_SECRET = process.env.JWT_SECRET;
